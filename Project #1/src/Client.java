@@ -25,12 +25,12 @@ public class Client {
          }while(socket.isClosed());
 
          Runnable receiver =()->{
-             try {
-                 System.out.println(bufferedReader.readLine());
-             }
-             catch (IOException e)
-             {
-                 e.printStackTrace();
+             while(true) {
+                 try {
+                     System.out.println(bufferedReader.readLine());
+                 } catch (IOException e) {
+                     e.printStackTrace();
+                 }
              }
          };
 
